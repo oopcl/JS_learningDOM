@@ -1,32 +1,46 @@
-let output;
+// document.getElementById()
 
-output = document.all;
-output = document.all[10];
+console.log(document.getElementById('app-title'));
+console.log(document.getElementById('app-title').id);
+console.log(document.getElementById('app-title').getAttribute('id'));
 
-output = document.documentElement;
-output = document.head;
-output = document.body;
+// set attributes 
+// document.getElementById('app-title').id = 'new-id';
+document.getElementById('app-title').title = 'Shopping List';
+document.getElementById('app-title').setAttribute('class', 'title');
 
-output = document.head.children;
-output = document.body.children;
+const title = document.getElementById('app-title');
 
-output = document.doctype;
-output = document.domain;
-output = document.URL;
-output = document.characterSet;
+// get/change content
 
-output = document.forms;
-output = document.forms[0];
-output = document.forms[0].id;
-output = document.forms[0].method;
-output = document.forms[0].action;
+console.log(title.textContent);
+title.textContent = 'Hello World'; 
+title.innerText = 'Hello Again';
+title.innerHTML = '<strong>Shopping List</strong>';
 
-// document.forms[0].id = new id;
+//change style
 
-const forms = Array.from(document.forms);
-forms.forEach( function(form){
-    console.log(form)
-});
+title.style.color = 'red';
+title.style.backgroundColor = 'black ';
+title.style.padding = '10px';
+title.style.borderRadius = '10px';
 
+//document.querySelector()
 
-console.log(output);
+console.log(document.querySelector('h1'));
+console.log(document.querySelector('#app-title'));
+console.log(document.querySelector('.container'));
+console.log(document.querySelector('input[type="text"]'));
+console.log(document.querySelector('li:nth-child(2)').innerText);
+
+const secondItem = document.querySelector('li:nth-child(2)');
+
+secondItem.innerText = 'Apple Juice';
+secondItem.style.color = 'red';
+
+// Use these methods on other elements
+const list = document.querySelector('ul');
+console.log(list);
+
+const firstItem = list.querySelector('li');
+firstItem.style.color = 'blue';
