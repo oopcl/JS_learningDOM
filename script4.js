@@ -1,46 +1,32 @@
-// document.getElementById()
+//querySelectorALL()
 
-console.log(document.getElementById('app-title'));
-console.log(document.getElementById('app-title').id);
-console.log(document.getElementById('app-title').getAttribute('id'));
+const listItems = document.querySelectorAll('.item');
+console.log(listItems[1].innerText);
 
-// set attributes 
-// document.getElementById('app-title').id = 'new-id';
-document.getElementById('app-title').title = 'Shopping List';
-document.getElementById('app-title').setAttribute('class', 'title');
+// listItems[1].style.color ='red';
 
-const title = document.getElementById('app-title');
+// listItems.forEach(function(item, index){
+//     item.style.color = 'red';
 
-// get/change content
+//     if (index === 1){
+//         item.remove();
+//     }
 
-console.log(title.textContent);
-title.textContent = 'Hello World'; 
-title.innerText = 'Hello Again';
-title.innerHTML = '<strong>Shopping List</strong>';
+//     if (index === 0){
+//        item.innerHTML = 'Oranges <button class="remove-item btn-link text-red"> <i class="fa-solid fa-xmark"></i> </button>' ;
+//     }
+// });
 
-//change style
+const listItems2 = document.getElementsByClassName('item');
 
-title.style.color = 'red';
-title.style.backgroundColor = 'black ';
-title.style.padding = '10px';
-title.style.borderRadius = '10px';
+console.log(listItems2[2].innerText);
 
-//document.querySelector()
+const listItemsArray = Array.from(listItems2);
 
-console.log(document.querySelector('h1'));
-console.log(document.querySelector('#app-title'));
-console.log(document.querySelector('.container'));
-console.log(document.querySelector('input[type="text"]'));
-console.log(document.querySelector('li:nth-child(2)').innerText);
+listItemsArray.forEach(item => {
+    console.log(item.innerText)
+});
 
-const secondItem = document.querySelector('li:nth-child(2)');
+const listItems3 = document.getElementsByTagName('li');
 
-secondItem.innerText = 'Apple Juice';
-secondItem.style.color = 'red';
-
-// Use these methods on other elements
-const list = document.querySelector('ul');
-console.log(list);
-
-const firstItem = list.querySelector('li');
-firstItem.style.color = 'blue';
+console.log(listItems3[0].innerText);
