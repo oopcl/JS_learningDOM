@@ -1,32 +1,32 @@
-//querySelectorALL()
+let output;
 
-const listItems = document.querySelectorAll('.item');
-console.log(listItems[1].innerText);
+output = document.all;
+output = document.all[10];
 
-// listItems[1].style.color ='red';
+output = document.documentElement;
+output = document.head;
+output = document.body;
 
-// listItems.forEach(function(item, index){
-//     item.style.color = 'red';
+output = document.head.children;
+output = document.body.children;
 
-//     if (index === 1){
-//         item.remove();
-//     }
+output = document.doctype;
+output = document.domain;
+output = document.URL;
+output = document.characterSet;
 
-//     if (index === 0){
-//        item.innerHTML = 'Oranges <button class="remove-item btn-link text-red"> <i class="fa-solid fa-xmark"></i> </button>' ;
-//     }
-// });
+output = document.forms;
+output = document.forms[0];
+output = document.forms[0].id;
+output = document.forms[0].method;
+output = document.forms[0].action;
 
-const listItems2 = document.getElementsByClassName('item');
+// document.forms[0].id = new id;
 
-console.log(listItems2[2].innerText);
-
-const listItemsArray = Array.from(listItems2);
-
-listItemsArray.forEach(item => {
-    console.log(item.innerText)
+const forms = Array.from(document.forms);
+forms.forEach( function(form){
+    console.log(form)
 });
 
-const listItems3 = document.getElementsByTagName('li');
 
-console.log(listItems3[0].innerText);
+console.log(output);
