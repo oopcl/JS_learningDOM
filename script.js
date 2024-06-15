@@ -1,14 +1,33 @@
-const div = document.createElement('div');
-div.className = 'my-element';
-div.id ='my-element';
-div.setAttribute('title', 'my Element');
+//Quick and Dirty
+function createListItem(item){
+    const li = document.createElement('li');
 
-// div.innerText = 'Hello World';
+    li.innerHTML = `${item}
+    <button class="remove-item btn-link text-red">
+      <i class="fa-solid fa-xmark"></i>
+    </button>`;
 
-const text = document.createTextNode('Hello World');
-div.appendChild(text);
+    document.querySelector('.items').appendChild(li);
+}
 
-// console.log(div);
-// document.body.appendChild(div);
+//Clean and Performant
 
-document.querySelector('ul').appendChild(div);
+function createNewItem(item){
+    const li = document.createElement('li');
+    li.appendChild(document.createTextNode(item));
+
+    const button = document.createElement('button');
+    button.className = "remove-item btn-link text-red";
+
+    const icon = document.createElement('i');
+    icon.className = "fa-solid fa-xmark";
+    button.appendChild(icon);
+    li.appendChild(button);
+
+    document.querySelector('.items').appendChild(li);
+
+    // console.log(button);
+}
+
+createListItem('Eggs');
+createNewItem('Cheese');
